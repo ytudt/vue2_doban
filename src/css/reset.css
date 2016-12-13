@@ -1,0 +1,60 @@
+html {
+    font-size : 10px;
+}
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 12px !important;
+    }
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 14px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 16px !important;
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 18px !important;
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 20px !important;
+    }
+}
+
+
+
+/* CSS Reset*/
+
+html { font-family:"微软雅黑", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 62.5%; }
+  body { margin: 0; font-size:1.4rem; line-height: 20px;  height: 100%; overflow-x: hidden; -webkit-overflow-scrolling: touch; color:red }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+a { background: transparent; text-decoration: none; }
+a:active { outline: 0; }
+b, strong { font-weight: bold; }
+dfn { font-style:normal;}
+img { border: 0; vertical-align: middle; }
+
+input,textarea,button { border: 0; margin: 0; padding: 0; font-family:"微软雅黑", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;}
+textarea { resize: none;}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th { padding: 0; }
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote { margin: 0; }
+ul, ol, li, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+input::-moz-placeholder, textarea::-moz-placeholder { color: #ccc; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #ccc; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #ccc; }
+
+.clr:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clr { display:inline-block;}
+/* Hides from IE-mac \*/
+* html .clr { height:1%;}
+.clr { display:block;}
+/* End hide from IE-mac */
+/*Reset End*/
