@@ -33,6 +33,8 @@
 </style>
 <script>
 import Loading from '../components/Loading.vue'
+import config from '../config'
+console.log(config)
 export default {
     components: {
         Loading
@@ -45,7 +47,7 @@ export default {
     },
     created() {
         console.log('created');
-        this.$http.get('https://api.douban.com/v2/movie/in_theaters').then((response) => {
+        this.$http.get(config.serverUrl+'/v2/movie/in_theaters').then((response) => {
             // console.log(response)
             this.movieList = response.body.subjects;
             this.isLoading=false;

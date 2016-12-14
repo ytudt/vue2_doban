@@ -54,6 +54,7 @@ h2 {
 }
 </style>
 <script>
+import config from '../config'
 export default {
     data() {
             return {
@@ -62,7 +63,7 @@ export default {
         },
         created() {
             let id = this.$route.query.id
-            this.$http.get('https://api.douban.com//v2/movie/subject/' + id).then((response) => {
+            this.$http.get(config.serverUrl+'/v2/movie/subject/' + id).then((response) => {
                 this.movieDetails.push(response.body)
 
 
