@@ -9,7 +9,7 @@ export default [{
     path: '/top250',
     component: resolve => require(['./pages/top250.vue'], resolve)
   }, {
-    path: '/movieDetail',
+    path: '/movieDetail/',
     component: resolve => require(['./pages/movieDetail.vue'], resolve)
   }]
 }]

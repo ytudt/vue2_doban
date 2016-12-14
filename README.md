@@ -23,7 +23,7 @@ npm run e2e
 # run all tests
 npm test
 ```
-
+  "sass-loader": "^4.0.2",
 # 线上demo
 ![](./demo.png)
 

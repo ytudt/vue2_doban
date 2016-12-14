@@ -1,66 +1,74 @@
 <template>
-<div>
-   <div class="imgWrap">
-    <!-- xiagnqing -->
-    <img :src="movieDetail.images.large" alt="">
-  </div>
-  <div class="infoWrap">
-     <h2>{{movieDetail.title}}</h2>
-  <ul class="casts clr">
-  <li class="cast" v-for="cast in movieDetail.casts" track-by="$index">
-    {{cast.name}} /
-  </li>
-  </ul>
-  </div>
-
-</div>
-
+    <div>
+        <ul>
+            <li v-for="movieDetail in movieDetails">
+                <div class="imgWrap">
+                    <img :src="movieDetail.images.large" alt="">
+                    <!-- </div> -->
+                    <div class="infoWrap">
+                        <h2>{{movieDetail.title}}</h2>
+                        <ul class="casts clr">
+                            <li class="cast" v-for="cast in movieDetail.casts" track-by="$index">
+                                {{cast.name}} /
+                            </li>
+                        </ul>
+                    </div>
+            </li>
+        </ul>
+        </div>
 </template>
 <style>
-  .imgWrap{
+.imgWrap {
     width: 100%;
     text-align: center;
     position: relative;
     /*top:3.6rem;*/
-    margin:0 auto;
-  }
-  .imgWrap img{
-    width: 50%;
-  }
+    margin: 0 auto;
+}
 
-  .infoWrap{
-    margin:0 auto;
+.imgWrap img {
+    width: 50%;
+}
+
+.infoWrap {
+    margin: 0 auto;
     text-align: center;
-  }
-  h2{
+}
+
+h2 {
     margin: 10px;
-  }
-  .casts{
+}
+
+.casts {
     width: auto;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
     margin: 5px 0;
-  }
-    .cast{
+}
+
+.cast {
     float: left;
     color: blue;
     margin: 0 auto;
-  }
+}
 </style>
 <script>
 export default {
-   data() {
-      return {
-        movieDetail: this.$route.query.item
-      }
-    },
-    created() {
-      // console.log(this.movieDetail)
+    data() {
+            return {
+                movieDetails: []
+            }
+        },
+        created() {
+            let id = this.$route.query.id
+            this.$http.get('https://api.douban.com//v2/movie/subject/' + id).then((response) => {
+                this.movieDetails.push(response.body)
 
-      console.log(this.$route.query.item)
-      // console.log(JSON.stringify(this.$route.params))
-    }
+
+            }, (response) => {});
+
+        }
 
 
 
