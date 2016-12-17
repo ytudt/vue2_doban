@@ -15,6 +15,7 @@ import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import routes from './routes'
+import store from './store/'
 import './scss/common.scss'
 import './css/reset.css'
 import './css/index.css'
@@ -31,4 +32,4 @@ Vue.use(ElementUI)
 const router = new VueRouter({
   routes
 })
-new Vue({ router }).$mount('#app')
+new Vue({store, router }).$mount('#app')

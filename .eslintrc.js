@@ -16,7 +16,10 @@ module.exports = {
     // 'arrow-parens': 0,
     // allow async-await
     // 'generator-star-spacing': 0,
-    "indent": ["error", 2],
+    "indent": [0, 0],
+    "no-spaced-func": 0,
+    "no-multiple-empty-lines": [1, {"max": 5}],//空行最多不能超过2行
+    "space-before-function-parentheses": 0
     // allow debugger during development
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

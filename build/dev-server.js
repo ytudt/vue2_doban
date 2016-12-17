@@ -18,7 +18,10 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 var compiler = webpack(webpackConfig)
-
+// app.use('/',function(req,res,netx){
+//   console.log(req.url)
+//   next();
+// })
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: {
@@ -37,13 +40,16 @@ compiler.plugin('compilation', function (compilation) {
 })
 
 // proxy api requests
-Object.keys(proxyTable).forEach(function (context) {
-  var options = proxyTable[context]
-  if (typeof options === 'string') {
-    options = { target: options }
-  }
-  app.use(proxyMiddleware(context, options))
-})
+// Object.keys(proxyTable).forEach(function (context) {
+//   var options = proxyTable[context]
+//   if (typeof options === 'string') {
+//     options = { target: options }
+//   }
+//   console.log(context)
+//   console.log(options)
+//   app.use(proxyMiddleware(context, options))
+// })
+ app.use('/v2', proxyMiddleware({target: 'https://api.douban.com', changeOrigin: true}));
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
@@ -64,7 +70,7 @@ module.exports = app.listen(port, function (err) {
     console.log(err)
     return
   }
-  var uri = 'http://127.0.0.1:' + port
+  var uri = 'http://192.168.2.106:' + port
   console.log('Listening at ' + uri + '\n')
 
   // when env is testing, don't need open it

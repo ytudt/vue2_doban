@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="father">
     <v-header class="header"></v-header>
     <transition name="fade">
       <router-view class="wrap"></router-view>
@@ -14,7 +14,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.5s
+  transition: all 0.2s
 }
 
 .fade-enter {
@@ -24,12 +24,16 @@
 .fade-leave-active {
   transform: translate(-400px, 0);
 }
-
+.father{
+  min-height: 100%;
+}
 .wrap {
-  width: 100%;
-  position: relative;
-  top: 3.6rem;
-  bottom: 0;
+      width: 100%;
+    position: absolute;
+    top: 3.6rem;
+    bottom: 0;
+    bottom: 0;
+    /* min-height: 100%; */
 }
 </style>
 <script>
