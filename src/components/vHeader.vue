@@ -2,8 +2,8 @@
 <header class="headerWrap">
   <i class="icon_menu el-icon-menu"></i>
   豆瓣电影
-  <router-link :to="{ path: 'index' }">index</router-link>
-    <router-link :to="{ path: 'top250' }">top250</router-link>
+ <!--  <router-link :to="{ path: 'index' }">index</router-link>
+    <router-link :to="{ path: 'top250' }">top250</router-link> -->
 </header>
 </template>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,15 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from './state'
+import actions from './actions'
+import mutations from './mutations'
 import indexList from './modules/indexList'
-// import * as actions from './actions'
-
 Vue.use(Vuex)
-
+export const IS_LOADED = 'IS_LOADED'
+export const IS_LOADING = 'IS_LOADING'
 export default new Vuex.Store({
+  state,
+  actions,
+  mutations,
  strict: true, //使用严格模式
-    modules: {
+ modules: {
         indexList
     }
-
-
 })

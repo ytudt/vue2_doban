@@ -3,7 +3,7 @@ export default [{
   path: '/',
   component: App,
   children: [{
-    path: '/index',
+    path: '/',
     component: resolve => require(['./pages/index.vue'], resolve)
   }, {
     path: '/top250',
@@ -11,5 +11,11 @@ export default [{
   }, {
     path: '/movieDetail/',
     component: resolve => require(['./pages/movieDetail.vue'], resolve)
-  }]
+  },
+  , {
+    path: '/cast/',
+    component: resolve => require(['./pages/movieDetail.vue'], resolve)
+  }
+
+  ]
 }]

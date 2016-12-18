@@ -6,12 +6,16 @@
     </transition>
   </div>
 </template>
-<style scoped>
+<style scoped lang="scss">
+@import "./scss/common.scss";
 .header {
   position: absolute;
   width: 100%;
 }
-
+.mt-header{
+background:#036bc4 !important;
+  height: 3.6rem;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.2s
@@ -24,16 +28,19 @@
 .fade-leave-active {
   transform: translate(-400px, 0);
 }
-.father{
+
+.father {
   min-height: 100%;
 }
+
 .wrap {
-      width: 100%;
-    position: absolute;
-    top: 3.6rem;
-    bottom: 0;
-    bottom: 0;
-    /* min-height: 100%; */
+  width: 100%;
+  position: absolute;
+  top: 3.6rem;
+  bottom: 0;
+  bottom: 0;
+  background:$color_background;
+  /* min-height: 100%; */
 }
 </style>
 <script>

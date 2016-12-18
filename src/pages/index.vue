@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="movieLists">
-      <li class="movieList" v-for="item in movieList" track-by="$index">
+      <li class="movieList" v-for="item in list" track-by="$index">
         <router-link :to="{ path: 'movieDetail', query:{id:item.id}}">
           <div>
             <img :src="item.images.small" alt="">
@@ -17,6 +17,7 @@
 <style>
 .movieLists {
   width: 100%;
+  margin: 20px 0;
 }
 
 .movieList {
@@ -35,51 +36,46 @@
 <script>
 import Loading from '../components/Loading.vue'
 import config from '../config'
-import {
-  mapActions
-} from 'vuex'
-import {
-  PULL_LIST
-} from '../store/modules/indexList'
-console.log(config)
+import { mapActions} from 'vuex'
+import {PULL_LIST} from '../store/modules/indexList'
+import {IS_LOADED,IS_LOADING} from '../store/index.js'
+import pullList from '../mixins/pullList'
+
 export default {
+  mixins: [pullList],
   components: {
     Loading
   },
   data() {
     return {
-      isLoading: true,
-      movieList: []
+      // serverUrl:'this.$store.state.isLoading',
+      list: []
     }
+  },
+  computed:{
+    isLoading: function(){
+      return this.$store.state.isLoading
+    }
+      // return
+    // }
   },
   created() {
     var that = this;
-    setTimeout(function() {
-      if (that.$store.state.indexList.list.length != 0) {
-        that.movieList = that.$store.state.indexList.list;
-        that.isLoading = false;
+      if (this.$store.state.indexList.list.length != 0) {
+        this.list = this.$store.state.indexList.list;
+        this.IS_LOADED();
       } else {
-        that.$http.get(config.serverUrl + '/v2/movie/in_theaters').then((response) => {
-          that.PULL_LIST(response.body.subjects);
-          that.movieList = response.body.subjects;
-          that.isLoading = false;
+        this.$http.get(config.serverUrl + '/v2/movie/in_theaters').then((response) => {
+          this.PULL_LIST(response.body.subjects);
+          this.IS_LOADED();
+          this.list = response.body.subjects;
+          this.isLoading = false;
 
         }, (response) => {});
       }
-    },1000)
-
-
-
   },
   methods: {
-    ...mapActions([PULL_LIST]),
-    // showDetail(item){
-    //   console.log(this.$route)
-    //   console.log(this.$route.router)
-    //   console.log(this.router)
-    //   // this.$route.go('/movieDetail')
-    //   console.log(item)
-    // }
+    ...mapActions([PULL_LIST,IS_LOADED,IS_LOADING]),
   }
 }
 </script>

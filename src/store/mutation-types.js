@@ -1,4 +1,5 @@
-export const ADD_TO_CART = 'ADD_TO_CART'
+export const IS_LOADED = 'IS_LOADED'
+export const IS_LOADING = 'IS_LOADING'
 export const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'
 export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
 export const CHECKOUT_FAILURE = 'CHECKOUT_FAILURE'
