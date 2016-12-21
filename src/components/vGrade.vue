@@ -41,15 +41,10 @@
 export default {
   props: ['grade'],
   computed: {
-    // isLoading: function() {
-    //   return this.$store.state.isLoading
-    // }
     full:function(){
       return parseInt(this.grade)%2!==0? Math.ceil(this.grade/2):Math.floor(this.grade/2);
     },
     half:function(){
-      console.log(parseInt(this.grade)%2)
-      console.log(this.grade%1)
       return (parseInt(this.grade)%2==0&&this.grade%1>0)?1:0;
     },
     gray:function(){

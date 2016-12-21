@@ -36,7 +36,13 @@ Vue.use(VueRouter)
 //     { path: '/', component: App }
 // ]
 const router = new VueRouter({
+  // mode: 'history',
   routes
+  // scrollBehavior (to, from, savedPosition) {
+  //   // return 期望滚动到哪个的位置
+  //   console.log(22222)
+  //   return {x:0,y:100}
+  // }
 })
 // new Vue({store, router }).$mount('#app')
 new Vue({

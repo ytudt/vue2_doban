@@ -10,10 +10,12 @@
 <style scoped>
 .loading-wrap {
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
   background: #f2f2f2;
   text-align: center;
   min-height: 100%;
+  position: fixed;
+  top:50%;
 }
 
 .douban-logo {

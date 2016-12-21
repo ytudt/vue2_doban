@@ -44,6 +44,8 @@
 @import "../scss/common.scss";
 .movie-detail-wrap {
   background: $color_background;
+  // margin:20px, 0,0,0;
+  padding-top:20px;
 }
 
 .imgWrap {
@@ -52,7 +54,7 @@
   position: relative;
   /*top:3.6rem;*/
   margin: 0 auto;
-  margin: 20px 0;
+  // margin: 20px 0;
   font-size: 12px;
 }
 
@@ -152,14 +154,6 @@ export default {
     }
   },
   created() {
-    console.log(this.list)
-      // console.log(this.serverUrl)
-      // let id = this.$route.query.id
-      // this.$http.get(config.serverUrl + '/v2/movie/subject/' + id).then((response) => {
-      //   this.movieDetails.push(response.body)
-      //   this.IS_LOADED()
-      // }, (response) => {});
-
   }
 
 

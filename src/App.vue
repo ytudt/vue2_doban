@@ -35,11 +35,12 @@ background:#036bc4 !important;
 
 .wrap {
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 3.6rem;
   bottom: 0;
   bottom: 0;
   background:$color_background;
+      // overflow: auto;
   /* min-height: 100%; */
 }
 </style>

@@ -1,6 +1,7 @@
 'use strict'
 export default {
-  isLoading:true
+  isLoading:true,
+  scrollTop:{}
 }
 
 

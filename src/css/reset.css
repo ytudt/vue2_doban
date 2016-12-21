@@ -56,8 +56,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 /* Hides from IE-mac \*/
 * html .clr { height:1%;}
 .clr { display:block;}
-html, body{
+
+html{
 height:100%;
+}
+body{
+  background:#f2f2f2;
+  min-height: 100%;
 }
 
 .center{

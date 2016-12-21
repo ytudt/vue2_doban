@@ -11,14 +11,10 @@ export default {
     },
     mutations: {
         [PULL_LIST](state, list) {
-            console.log(state)
             state.list=list;
-            console.log(state)
         },
          [MODIFY_TAB](state, tabText) {
-            console.log(state)
             state.activeTitle=tabText;
-            console.log(state)
         }
     },
     actions: {
